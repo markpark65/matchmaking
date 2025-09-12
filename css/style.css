@@ -1,0 +1,203 @@
+/* --- 기본 스타일 --- */
+body { 
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+    margin: 0; 
+    padding: 0; /* body padding 제거 */
+    background-color: #f4f7f6; 
+    color: #333; 
+    line-height: 1.6;
+}
+
+.container { 
+    max-width: 800px; 
+    margin: 20px auto; /* 중앙 정렬 및 위아래 여백 */
+    background-color: #fff; 
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+}
+
+h1, h2, h3, h4 { 
+    color: #2c3e50; 
+    margin-bottom: 15px;
+}
+
+button, .btn { 
+    background-color: #3498db; 
+    color: white; 
+    border: none; 
+    padding: 10px 15px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 16px; 
+    transition: background-color 0.3s; 
+    text-decoration: none; /* a 태그 버튼 스타일 */
+    display: inline-block;
+    text-align: center;
+}
+
+button:hover, .btn:hover { 
+    background-color: #2980b9; 
+}
+
+button:disabled { 
+    background-color: #bdc3c7; 
+    cursor: not-allowed; 
+}
+
+.btn-secondary {
+    background-color: #95a5a6;
+}
+.btn-secondary:hover {
+    background-color: #7f8c8d;
+}
+
+.btn-primary {
+    background-color: #3498db;
+}
+.btn-primary:hover {
+    background-color: #2980b9;
+}
+
+.btn-large {
+    padding: 15px 30px;
+    font-size: 18px;
+}
+
+input[type="text"], 
+input[type="password"], 
+input[type="email"],
+input[type="tel"], 
+select, 
+textarea { 
+    width: calc(100% - 22px); 
+    padding: 10px; 
+    margin: 8px 0; 
+    border: 1px solid #ddd; 
+    border-radius: 4px; 
+    font-size: 16px; 
+    box-sizing: border-box; /* padding이 width에 포함되도록 */
+}
+
+/* --- 컴포넌트 스타일 --- */
+.card { 
+    background: #ecf0f1; 
+    border-radius: 5px; 
+    padding: 15px; 
+    margin-bottom: 15px; 
+    border-left: 5px solid #3498db; 
+}
+
+.card h4 { 
+    margin-top: 0; 
+}
+
+.applicant-item { 
+    border: 1px solid #ddd; 
+    padding: 10px; 
+    margin-top: 10px; 
+    border-radius: 5px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.applicant-item p { margin: 5px 0; }
+.applicant-item .actions { margin-top: 10px; }
+.applicant-item button { margin-right: 10px; font-size: 14px; padding: 8px 12px; }
+
+.accept-btn { 
+    background-color: #2ecc71; 
+}
+
+.accept-btn:hover { 
+    background-color: #27ae60; 
+}
+
+.reject-btn { 
+    background-color: #95a5a6; 
+}
+
+.reject-btn:hover { 
+    background-color: #7f8c8d; 
+}
+
+/* --- 헤더 --- */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 15px 0;
+    border-bottom: 5px solid #f39c12; /* 황색 구분선 */
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 25px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+    color: #f39c12;
+}
+
+.auth-buttons a {
+    margin-left: 10px;
+}
+
+.logged-in-menu {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.logged-in-menu #welcome-msg {
+    font-size: 17px;
+}
+
+/* --- 강의실 탭 --- */
+.tabs { margin-bottom: 15px; display: flex; gap: 10px; }
+.tab-btn { background-color: #bdc3c7; }
+.tab-btn.active { background-color: #3498db; }
+.tab-content { display: none; padding: 15px; border: 1px solid #eee; border-radius: 5px; background-color: #fcfcfc; }
+.tab-content.active { display: block; }
+.chat-window { height: 200px; border: 1px solid #ddd; padding: 10px; overflow-y: auto; margin-bottom: 10px; background-color: #fff; }
+.message { padding: 8px; border-radius: 8px; margin-bottom: 5px; max-width: 70%; }
+.message.sent { background-color: #3498db; color: white; margin-left: auto; text-align: right; }
+.message.received { background-color: #ecf0f1; text-align: left; }
+.chat-input { display: flex; gap: 5px; }
+.chat-input textarea { flex-grow: 1; resize: none; height: 40px; }
+.chat-input button { width: auto; padding: 10px 15px; }
+
+/* --- 폼 관련 --- */
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+.radio-group label { margin-right: 15px; }
+.subject-checkboxes div { margin-bottom: 5px; }
+.profile-input-group { border: 1px solid #eee; padding: 15px; border-radius: 5px; background-color: #f9f9f9; }

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MatchMaker - 최적의 과외 매칭</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">MatchMaker</div>
+            <nav>
+                <ul>
+                    <li><a href="free_test.html" data-nav="free-test">무료 테스트 보기</a></li>
+                    <li><a href="#" data-nav="tutoring-apply">과외 신청</a></li>
+                    <li><a href="#" data-nav="teacher-profile">강사 프로필</a></li>
+                    <li><a href="#" data-nav="community">커뮤니티</a></li>
+                    <li><a href="#" data-nav="online-counseling">온라인 컨설팅</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn btn-secondary">로그인</a>
+                <a href="signup.html" class="btn btn-primary">회원가입</a>
+            </div>
+            <div class="logged-in-menu" style="display:none;">
+                <span id="welcome-msg">환영합니다!</span>
+                <a href="#" data-nav="mypage" class="btn btn-secondary">마이페이지</a>
+                <button class="btn btn-secondary" data-action="logout">로그아웃</button>
+            </div>
+        </div>
+    </header>
+
+    <main id="app">
+        <section class="hero-section">
+            <p>최적의 강사님과 매칭 해주는</p>
+            <p>대한민국 유일 과외 플랫폼</p>
+            <h2>매치메이커</h2>
+            <button class="btn btn-primary btn-large" data-action="go-to-free-test">무료 테스트 보기</button>
+        </section>
+
+        <section class="teacher-profiles-section">
+            <h2>강사진 프로필</h2>
+            <div class="profile-carousel">
+                </div>
+        </section>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

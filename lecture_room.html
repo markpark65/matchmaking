@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MatchMaker - 강의실</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">MatchMaker</div>
+            <nav>
+                <ul>
+                    <li><a href="#" data-nav="free-test">무료 테스트 보기</a></li>
+                    <li><a href="#" data-nav="tutoring-apply">과외 신청</a></li>
+                    <li><a href="#" data-nav="teacher-profile">강사 프로필</a></li>
+                    <li><a href="#" data-nav="community">커뮤니티</a></li>
+                    <li><a href="#" data-nav="online-counseling">온라인 컨설팅</a></li>
+                </ul>
+            </nav>
+            <div class="logged-in-menu">
+                <span id="welcome-msg"></span>
+                <a href="#" data-nav="mypage" class="btn btn-secondary active">마이페이지</a>
+                <button class="btn btn-secondary" data-action="logout">로그아웃</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container" style="margin-top: 30px;">
+        <div id="app-content">
+            <p>강의실 내용을 불러오는 중입니다...</p>
+        </div>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

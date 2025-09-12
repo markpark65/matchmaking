@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MatchMaker - 회원가입</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container" style="max-width: 500px; margin-top: 50px;">
+        <h2 style="text-align: center;">매치메이커 회원가입</h2>
+
+        <div id="auth-step-1" class="form-group">
+            <label>휴대폰 번호를 인증해주세요</label>
+            <input type="tel" id="phone-number" placeholder="'-'를 제외한 전화번호" required>
+            <button class="btn btn-primary" data-action="send-phone-auth">인증번호 전송</button>
+        </div>
+
+        <div id="auth-step-2" style="display:none;" class="form-group">
+            <label>인증번호를 입력해주세요</label>
+            <input type="text" id="auth-number" placeholder="인증번호 4자리" required>
+            <button class="btn btn-primary" data-action="next-signup-step">인증 및 다음 단계</button>
+        </div>
+
+        <div id="signup-form-fields" style="display:none;">
+            <div class="form-group">
+                <label for="username">아이디</label>
+                <input type="text" id="username" placeholder="아이디" required>
+            </div>
+            <div class="form-group">
+                <label for="email">이메일</label>
+                <input type="email" id="email" placeholder="이메일" required>
+            </div>
+            <div class="form-group">
+                <label for="password">비밀번호</label>
+                <input type="password" id="password" placeholder="비밀번호" required>
+            </div>
+            <div class="form-group">
+                <label for="name">이름</label>
+                <input type="text" id="name" placeholder="이름" required>
+            </div>
+
+            <div class="form-group radio-group">
+                <label>가입 유형:</label><br>
+                <label><input type="radio" name="userType" value="student" checked data-action="toggle-teacher-fields"> 학생</label>
+                <label><input type="radio" name="userType" value="teacher" data-action="toggle-teacher-fields"> 강사</label>
+            </div>
+            
+            <fieldset class="form-group">
+                <legend>관심/강의 가능 과목 (중복 선택 가능)</legend>
+                <div class="subject-checkboxes">
+                    <div><input type="checkbox" id="math_g12" name="subjects" value="math_g12"><label for="math_g12">고3 수학</label></div>
+                    <div><input type="checkbox" id="eng_g12" name="subjects" value="eng_g12"><label for="eng_g12">고3 영어</label></div>
+                    <div><input type="checkbox" id="ap_econ" name="subjects" value="ap_econ"><label for="ap_econ">AP 경제학</label></div>
+                    <div><input type="checkbox" id="ib_math" name="subjects" value="ib_math"><label for="ib_math">IB 수학</label></div>
+                    </div>
+            </fieldset>
+
+            <div id="teacher-fields" class="profile-input-group" style="display: none;">
+                <label for="career">주요 경력 및 학력 사항</label>
+                <textarea id="career" placeholder="예: 서울대학교 수학과 졸업, OO학원 5년 경력"></textarea>
+                <label for="available-time" style="margin-top: 10px;">강의 가능 시간</label>
+                <input type="text" id="available-time" placeholder="예: 평일 저녁 7-10시, 주말 오후">
+            </div>
+            
+            <button class="btn btn-primary btn-large" data-action="complete-signup">가입 완료</button>
+        </div>
+    </div>
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

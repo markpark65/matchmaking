@@ -1,0 +1,89 @@
+/* --- 메인 페이지 섹션 --- */
+.hero-section {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #eaf4fb;
+    border-bottom: 1px solid #ddd;
+}
+
+.hero-section h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.hero-section p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.hero-section .btn-large {
+    margin-top: 30px;
+}
+
+.teacher-profiles-section {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.teacher-profiles-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.profile-carousel {
+    display: flex;
+    overflow-x: auto; /* 가로 스크롤 가능하게 함 */
+    scroll-snap-type: x mandatory; /* 스냅 효과 */
+    padding-bottom: 15px;
+    gap: 20px; /* 카드 사이 간격 */
+}
+
+.teacher-profile-card {
+    flex: 0 0 auto; /* 크기 고정, 줄바꿈 안함 */
+    width: 300px; /* 카드 너비 */
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    padding: 20px;
+    text-align: center;
+    scroll-snap-align: start; /* 스크롤 시작점에 스냅 */
+    transition: transform 0.3s ease; /* 호버 애니메이션 */
+}
+
+.teacher-profile-card:hover {
+    transform: translateY(-5px);
+}
+
+.teacher-profile-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #3498db;
+}
+
+.teacher-profile-card h3 {
+    margin-top: 0;
+    color: #3498db;
+}
+
+.teacher-profile-card p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.teacher-profile-card .subjects span {
+    display: inline-block;
+    background-color: #e0f2f7;
+    color: #2980b9;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    margin: 2px;
+}
