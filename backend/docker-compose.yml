@@ -1,0 +1,37 @@
+# version 속성은 최신 Docker Compose에서 사용되지 않으므로 제거합니다.
+services:
+  backend:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    environment:
+      - DB_HOST=db
+      - DB_USER=root
+      - DB_PASSWORD=myadmin # 🚨 여기를 꼭 수정하세요!
+      - DB_NAME=tutor_matching_db
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: myadmin # 🚨 여기도 똑같이 수정하세요!
+      MYSQL_DATABASE: tutor_matching_db
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+volumes:
+  mysql_data:

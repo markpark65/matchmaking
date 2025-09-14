@@ -34,28 +34,24 @@
 }
 
 .profile-carousel {
-    display: flex;
-    overflow-x: auto; /* 가로 스크롤 가능하게 함 */
-    scroll-snap-type: x mandatory; /* 스냅 효과 */
-    padding-bottom: 15px;
-    gap: 20px; /* 카드 사이 간격 */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
 }
 
 .teacher-profile-card {
-    flex: 0 0 auto; /* 크기 고정, 줄바꿈 안함 */
-    width: 300px; /* 카드 너비 */
     background-color: #fff;
     border: 1px solid #eee;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     padding: 20px;
     text-align: center;
-    scroll-snap-align: start; /* 스크롤 시작점에 스냅 */
-    transition: transform 0.3s ease; /* 호버 애니메이션 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .teacher-profile-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .teacher-profile-card img {
@@ -76,6 +72,10 @@
     font-size: 14px;
     color: #666;
     margin-bottom: 5px;
+}
+
+.teacher-profile-card .subjects {
+    margin-top: 10px;
 }
 
 .teacher-profile-card .subjects span {
