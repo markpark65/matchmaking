@@ -5,52 +5,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MatchMaker - 강사 마이페이지</title>
-    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-    <header>
-        <div class="header-container">
-            <div class="logo"><a href="index.html">MatchMaker</a></div>
-            <nav>
-                <ul>
-                    <li><a href="free_test.html">무료 테스트 보기</a></li>
-                    <li><a href="#" data-nav="teacher-profile">강사 프로필</a></li>
-                    <li><a href="#" data-nav="community">커뮤니티</a></li>
-                </ul>
+<body class="bg-slate-100">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto max-w-7xl p-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-blue-600"><a href="index.html">MatchMaker</a></div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="free_test.html" class="text-slate-600 hover:text-blue-600">무료 테스트 보기</a>
+                <a href="#" data-nav="teacher-profile" class="text-slate-600 hover:text-blue-600">강사 프로필</a>
+                <a href="#" data-nav="community" class="text-slate-600 hover:text-blue-600">커뮤니티</a>
             </nav>
-            <div class="logged-in-menu">
+            <div class="logged-in-menu flex items-center space-x-4">
                 <span id="welcome-msg"></span>
-                <a href="#" data-nav="mypage" class="btn btn-secondary active">마이페이지</a>
-                <button class="btn btn-secondary" data-action="logout">로그아웃</button>
+                <a href="teacher_mypage.html" data-nav="mypage"
+                    class="px-4 py-2 rounded-md text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700">마이페이지</a>
+                <button data-action="logout"
+                    class="px-4 py-2 rounded-md text-sm font-semibold text-white bg-slate-500 hover:bg-slate-600">로그아웃</button>
             </div>
         </div>
     </header>
-    <main class="container" style="margin-top: 30px;">
-        <h2 id="mypage-title">강사 마이페이지</h2>
-        <div id="app-content">
+
+    <main class="container mx-auto max-w-4xl mt-12">
+        <h2 id="mypage-title" class="text-3xl font-bold text-slate-800 mb-8">강사 마이페이지</h2>
+        <div id="app-content" class="space-y-10">
             <p>마이페이지 내용을 불러오는 중입니다...</p>
         </div>
     </main>
+
     <script src="js/app.js"></script>
     <script>
-        // 앱을 시작하는 함수
-        function startApp() {
-            // DOM이 준비되면 페이지 초기화 함수를 실행
-            document.addEventListener('DOMContentLoaded', initializePage);
-        }
-
-        // mock 모드가 켜져있는지 확인
+        function startApp() { document.addEventListener('DOMContentLoaded', initializePage); }
         if (USE_MOCK_API) {
             const mockScript = document.createElement('script');
             mockScript.src = 'js/mock_data.js';
-
-            // 중요: mock_data.js 파일이 완전히 로드된 후에 앱을 시작!
             mockScript.onload = startApp;
-
             document.body.appendChild(mockScript);
         } else {
-            // mock 모드가 아니면 바로 앱을 시작
             startApp();
         }
     </script>
